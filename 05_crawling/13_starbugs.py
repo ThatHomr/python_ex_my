@@ -1,0 +1,30 @@
+from bs4 import BeautifulSoup
+from urllib import request
+
+url = 'https://www.starbucks.co.kr/store/store_map.do'
+
+# res = request.urlopen(url)
+# soup = BeautifulSoup(res, 'html.parser')
+# # print(soup)
+# print(soup.select('ul.quickSearchResultBox'))
+
+from selenium import webdriver
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get(url)
+time.sleep(5)
+driver.find_element(By.CLASS_NAME, 'loca_search').click()
+time.sleep(5)
+driver.find_element(By.CLASS_NAME, 'sido_area_box').find_element()
+time.sleep(5)
+driver.find_element(By.CLASS_NAME, 'set_gugun_cd_btn').click()
+time.sleep(5)
+
+
+# page = driver.page_source
+# soup = BeautifulSoup(page, 'html.parser')
+# print(soup.select('ul.quickSearchResultBox li'))
+
